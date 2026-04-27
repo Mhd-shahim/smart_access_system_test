@@ -1,0 +1,56 @@
+/* ── Bottom Navbar ── */
+.bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.55rem 0.5rem 0.7rem;
+  background: #ffffff;
+  border-top: 1px solid #f0f0f0;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 1rem;
+  border-radius: 12px;
+  transition: background 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-nav-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.bottom-nav-icon {
+  font-size: 1.15rem;
+  color: #bbb;
+  transition: color 0.2s;
+}
+
+.bottom-nav-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #bbb;
+  transition: color 0.2s;
+}
+
+/* Active tab */
+.bottom-nav-item.active .bottom-nav-icon {
+  color: #1a1a1a;
+}
+
+.bottom-nav-item.active .bottom-nav-label {
+  color: #1a1a1a;
+}

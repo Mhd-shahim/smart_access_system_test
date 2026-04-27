@@ -1,0 +1,388 @@
+/* ── Wrapper ── */
+.ra-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.5rem 1rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient blobs */
+.ra-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ra-blob-1 {
+  width: 300px;
+  height: 300px;
+  background: #555;
+  top: -80px;
+  right: -60px;
+}
+
+.ra-blob-2 {
+  width: 250px;
+  height: 250px;
+  background: #222;
+  bottom: -60px;
+  left: -70px;
+}
+
+/* ── Phone frame ── */
+.ra-phone-frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  animation: raSlideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes raSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Top bar ── */
+.ra-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.2rem 0.4rem;
+}
+
+.ra-back-btn,
+.ra-notif-btn {
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  font-size: 1rem;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.ra-back-btn:hover,
+.ra-notif-btn:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.ra-topbar-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.2px;
+}
+
+/* ── Scroll area ── */
+.ra-scroll-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Breadcrumb */
+.ra-breadcrumb {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  color: #999;
+  text-transform: uppercase;
+  padding: 0 0.2rem;
+  margin: 0;
+}
+
+/* ── Card ── */
+.ra-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1.6rem 1.5rem 1.8rem;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+}
+
+.ra-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.3rem;
+}
+
+.ra-card-sub {
+  font-size: 0.875rem;
+  color: #888;
+  line-height: 1.5;
+  margin: 0 0 1.4rem;
+}
+
+/* ── Fields ── */
+.ra-field-group {
+  margin-bottom: 1rem;
+}
+
+.ra-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+/* ── Inputs ── */
+.ra-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ra-input-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 0.85rem;
+  color: #bbb;
+  pointer-events: none;
+  z-index: 1;
+  transition: color 0.2s;
+}
+
+.ra-input-wrap:focus-within .ra-input-icon {
+  color: #555;
+}
+
+.ra-input {
+  width: 100%;
+  padding: 0.78rem 1rem;
+  background: #f4f5f8;
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  color: #1a1a1a;
+  font-size: 0.88rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ra-input::placeholder {
+  color: #bbb;
+}
+
+.ra-input:focus {
+  background: #fff;
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
+}
+
+.ra-input-padded {
+  padding-left: 2.6rem;
+}
+
+/* Select */
+.ra-select-wrap {
+  position: relative;
+}
+
+.ra-select {
+  cursor: pointer;
+  padding-right: 2.4rem;
+}
+
+.ra-select-chevron {
+  position: absolute;
+  right: 14px;
+  font-size: 0.75rem;
+  color: #999;
+  pointer-events: none;
+}
+
+/* ── Photo zone ── */
+.ra-photo-zone {
+  display: block;
+  border: 1.5px dashed #ddd;
+  border-radius: 16px;
+  background: #f9f9fb;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s;
+  min-height: 130px;
+}
+
+.ra-photo-zone:hover {
+  border-color: #aaa;
+  background: #f2f2f5;
+}
+
+.ra-photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1.4rem 1rem;
+}
+
+.ra-face-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.2rem;
+}
+
+.ra-face-icon {
+  font-size: 1.6rem;
+  color: #1a1a1a;
+}
+
+.ra-photo-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.ra-photo-hint {
+  font-size: 0.78rem;
+  color: #aaa;
+}
+
+.ra-photo-input {
+  display: none;
+}
+
+.ra-photo-preview {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Submit Button ── */
+.ra-submit-btn {
+  margin-top: 1.4rem;
+  width: 100%;
+  padding: 0.9rem;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
+}
+
+.ra-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background: #333;
+}
+
+.ra-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.ra-submit-btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.ra-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: raSpin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes raSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Success Badge ── */
+.ra-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #fff8f0;
+  border: 1.5px solid #f5d9b8;
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  animation: badgePop 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes badgePop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ra-badge-icon-wrap {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ra-badge-icon {
+  font-size: 1.05rem;
+  color: #c87941;
+}
+
+.ra-badge-text {
+  font-size: 0.84rem;
+  color: #7a5030;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 400px) {
+  .ra-card {
+    padding: 1.3rem 1.1rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .ra-card-title {
+    font-size: 1.15rem;
+  }
+}

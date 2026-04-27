@@ -1,0 +1,257 @@
+/* ── Wrapper ── */
+.login-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem;
+}
+
+/* ── Phone frame ── */
+.login-phone-frame {
+  width: 100%;
+  max-width: 340px;
+  animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Header ── */
+.login-header {
+  padding: 0 1.4rem;
+}
+
+.fingerprint-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: #e8eaf0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.fingerprint-icon:hover {
+  transform: scale(1.06);
+}
+
+.fingerprint-icon .fa-fingerprint {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+}
+
+.brand-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 0.7rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.2px;
+}
+
+.brand-subtitle {
+  font-size: 0.875rem;
+  color: #888;
+  font-weight: 400;
+}
+
+/* ── Card ── */
+.login-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1.8rem 1.6rem;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.3rem;
+}
+
+.welcome-sub {
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* ── Fields ── */
+.field-group {
+  margin-bottom: 1rem;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+  color: #999;
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+}
+
+.field-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
+}
+
+.field-label-row .field-label {
+  margin-bottom: 0;
+}
+
+.forgot-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.forgot-link:hover {
+  opacity: 0.65;
+}
+
+/* ── Inputs ── */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 0.85rem;
+  color: #bbb;
+  pointer-events: none;
+  z-index: 1;
+  transition: color 0.2s;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 0.78rem 2.6rem 0.78rem 2.6rem;
+  background: #f4f5f8;
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  color: #1a1a1a;
+  font-size: 0.88rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+
+.custom-input::placeholder {
+  color: #bbb;
+}
+
+.custom-input:focus {
+  background: #fff;
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.08);
+}
+
+.input-wrapper:focus-within .input-icon {
+  color: #555;
+}
+
+.toggle-eye {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #bbb;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+  z-index: 1;
+}
+
+.toggle-eye:hover {
+  color: #555;
+}
+
+/* ── Login Button ── */
+.login-btn {
+  margin-top: 1.4rem;
+  padding: 0.9rem;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.login-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background: #333;
+}
+
+.login-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Card Footer ── */
+.card-footer-text {
+  padding-top: 0.2rem;
+}
+
+.footer-muted {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.request-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.request-link:hover {
+  opacity: 0.65;
+}
+
+/* ── Responsive ── */
+@media (max-width: 400px) {
+  .login-card {
+    padding: 1.5rem 1.2rem;
+    border-radius: 20px;
+  }
+
+  .brand-title {
+    font-size: 1.2rem;
+  }
+}
