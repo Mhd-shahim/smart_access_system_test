@@ -47,7 +47,7 @@ function RequestAccessPage({ onBack }) {
       <div className="ra-phone-frame">
         {/* Top bar */}
         <div className="ra-topbar">
-          <button className="ra-back-btn" onClick={onBack} aria-label="Go back">
+          <button className="ra-back-btn" onClick={() => window.history.back()} aria-label="Go back">
             <i className="fas fa-arrow-left" />
           </button>
           <span className="ra-topbar-title">Smart Access System</span>

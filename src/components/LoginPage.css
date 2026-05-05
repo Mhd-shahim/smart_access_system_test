@@ -155,7 +155,7 @@
   font-family: 'Inter', sans-serif;
   outline: none;
   transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
 }
 
 .custom-input::placeholder {

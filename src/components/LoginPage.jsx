@@ -1,19 +1,25 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './LoginPage.css'
 
-function LoginPage({ onLogin, onRequestAccess }) {
+function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-      onLogin?.()
+      navigate('/dashboard')
     }, 2000)
+  }
+
+  const onRequestAccess = () => {
+    navigate('/request-access')
   }
 
   return (
@@ -110,7 +116,7 @@ function LoginPage({ onLogin, onRequestAccess }) {
             <a
               href="#"
               className="request-link"
-              onClick={(e) => { e.preventDefault(); onRequestAccess?.() }}
+              onClick={(e) => { e.preventDefault(); onRequestAccess() }}
             >Request Access</a>
           </div>
         </div>

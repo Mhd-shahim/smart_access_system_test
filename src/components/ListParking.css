@@ -1,5 +1,5 @@
-/* ── Logs Page ── */
-.logs-page {
+/* ── Parking Page ── */
+.parking-page {
   max-width: 420px;
   margin: 0 auto;
   padding: 1.2rem 1rem 2rem;
@@ -22,7 +22,7 @@
 }
 
 /* ── Title ── */
-.logs-title {
+.parking-title {
   font-size: 1.35rem;
   font-weight: 800;
   color: #1a1a1a;
@@ -31,13 +31,13 @@
 }
 
 /* ── Search ── */
-.logs-search-wrap {
+.parking-search-wrap {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.logs-search-icon {
+.parking-search-icon {
   position: absolute;
   left: 14px;
   font-size: 0.85rem;
@@ -47,11 +47,11 @@
   transition: color 0.2s;
 }
 
-.logs-search-wrap:focus-within .logs-search-icon {
+.parking-search-wrap:focus-within .parking-search-icon {
   color: #555;
 }
 
-.logs-search {
+.parking-search {
   width: 100%;
   padding: 0.75rem 2.6rem 0.75rem 2.6rem;
   background: #ffffff;
@@ -62,19 +62,18 @@
   font-family: 'Inter', sans-serif;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
-  /* -webkit-appearance: none; */
 }
 
-.logs-search::placeholder {
+.parking-search::placeholder {
   color: #bbb;
 }
 
-.logs-search:focus {
+.parking-search:focus {
   border-color: #1a1a1a;
   box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.06);
 }
 
-.logs-search-clear {
+.parking-search-clear {
   position: absolute;
   right: 10px;
   background: none;
@@ -89,35 +88,18 @@
   transition: color 0.2s;
 }
 
-.logs-search-clear:hover {
+.parking-search-clear:hover {
   color: #555;
 }
 
-/* ── Group ── */
-.logs-group {
+/* ── List ── */
+.parking-list {
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
 }
 
-.logs-group-label {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #999;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0.3rem 0.1rem 0;
-}
-
-.logs-group-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-/* ── Entry Card ── */
-.log-entry {
+.parking-entry {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -128,13 +110,12 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.log-entry:hover {
+.parking-entry:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
 }
 
-/* Icon circle */
-.log-entry-icon-wrap {
+.parking-entry-icon-wrap {
   width: 42px;
   height: 42px;
   border-radius: 12px;
@@ -145,29 +126,20 @@
   flex-shrink: 0;
 }
 
-.log-entry-icon-wrap .fas {
+.parking-entry-icon-wrap .fas {
   font-size: 1rem;
   color: #1a1a1a;
 }
 
-.log-entry-icon-wrap.failed {
-  background: #fef2f2;
-}
-
-.log-entry-icon-wrap.failed .fas {
-  color: #dc2626;
-}
-
-/* Body */
-.log-entry-body {
+.parking-entry-body {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.35rem;
 }
 
-.log-entry-location {
+.parking-entry-name {
   font-size: 0.92rem;
   font-weight: 700;
   color: #1a1a1a;
@@ -176,7 +148,7 @@
   text-overflow: ellipsis;
 }
 
-.log-entry-meta {
+.parking-entry-meta {
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -184,13 +156,32 @@
   color: #999;
 }
 
-.log-entry-clock {
-  font-size: 0.68rem;
-  color: #bbb;
+.parking-entry-metrics {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
 }
 
-/* Status column */
-.log-entry-status-col {
+.parking-entry-metric {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.parking-entry-metric.available {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.parking-entry-metric.filled {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.parking-entry-status-col {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -198,35 +189,29 @@
   flex-shrink: 0;
 }
 
-.log-entry-badge {
+.parking-entry-distance {
+  font-size: 0.76rem;
+  color: #555;
+}
+
+.parking-entry-badge {
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.6px;
   padding: 0.22rem 0.55rem;
   border-radius: 6px;
   text-transform: uppercase;
+  background: #eeeded;
+  color: #212529;
 }
 
-.log-entry-badge.success {
-  background: #ecfdf5;
-  color: #16a34a;
-}
-
-.log-entry-badge.failed {
-  background: #fef2f2;
-  color: #dc2626;
-}
-
-.log-entry-reason {
-  font-size: 0.65rem;
-  color: #dc2626;
-  font-weight: 500;
-  text-align: right;
-  line-height: 1.3;
+.parking-entry-badge.nearest {
+  background: #eff6ff;
+  color: #1d4ed8;
 }
 
 /* ── Empty state ── */
-.logs-empty {
+.parking-empty {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -236,23 +221,23 @@
   color: #bbb;
 }
 
-.logs-empty-icon {
+.parking-empty-icon {
   font-size: 2rem;
 }
 
-.logs-empty p {
+.parking-empty p {
   font-size: 0.9rem;
   margin: 0;
 }
 
 /* ── Responsive ── */
 @media (max-width: 380px) {
-  .log-entry {
+  .parking-entry {
     padding: 0.75rem 0.8rem;
     gap: 0.6rem;
   }
 
-  .log-entry-location {
+  .parking-entry-name {
     font-size: 0.85rem;
   }
 }

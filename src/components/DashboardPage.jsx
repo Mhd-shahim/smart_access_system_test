@@ -6,27 +6,10 @@ import ProfilePage from './ProfilePage.jsx'
 import GuestRequestsPage from './GuestRequestsPage.jsx'
 import './DashboardPage.css'
 
-function DashboardPage({ onLogout }) {
-  const [activeTab, setActiveTab] = useState('home')
 
-  return (
-    <div className="dash-shell">
-      <TopNavbar />
-
-      <main className="dash-content">
-        {activeTab === 'home' && <HomeTab />}
-        {activeTab === 'logs' && <LogsPage />}
-        {activeTab === 'guests' && <GuestRequestsPage />}
-        {activeTab === 'profile' && <ProfilePage onLogout={onLogout} />}
-      </main>
-
-      <BottomNavbar activeTab={activeTab} onTabChange={setActiveTab} />
-    </div>
-  )
-}
 
 /* ──────────────────────── HOME TAB ──────────────────────── */
-function HomeTab() {
+function DashboardPage() {
   const [selectedAction, setSelectedAction] = useState(null)
 
   return (
