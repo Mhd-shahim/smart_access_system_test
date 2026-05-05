@@ -89,18 +89,15 @@ function ParkingCard({ area, isNearest }) {
       <div className="parking-entry-body">
         <span className="parking-entry-name">{area.name}</span>
         <span className="parking-entry-meta">
-          {area.available} available • {area.filled} filled • {area.total} total
+          {area.available} available • {area.total} total
         </span>
         <div className="parking-entry-metrics">
           <span className="parking-entry-metric available">
             {area.available} free
           </span>
-          <span className="parking-entry-metric filled">
-            {area.filled} taken
-          </span>
         </div>
       </div>
-
+        
       <div className="parking-entry-status-col">
         <span className="parking-entry-distance">
           {area.distance.toFixed(1)} km
